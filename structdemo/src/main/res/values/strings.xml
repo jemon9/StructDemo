@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">StructDemo</string>
+    <string name="username_hint">请输入用户名</string>
+    <string name="password_hint">请输入密码</string>
+</resources>
