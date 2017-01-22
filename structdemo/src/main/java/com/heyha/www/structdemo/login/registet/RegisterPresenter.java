@@ -1,6 +1,7 @@
 package com.heyha.www.structdemo.login.registet;
 
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.EditText;
 
 import com.heyha.www.library.base.BasePresenter;
@@ -25,10 +26,20 @@ public class RegisterPresenter extends BasePresenter<RegisterView> {
         return true;
     }
     public boolean isSame(EditText pswd1,EditText pswd2){
-        if (!TextUtils.isEmpty(pswd1.getText()) && !TextUtils.isEmpty(pswd2.getText()) && pswd1.getText().equals(pswd2.getText())){
+        Log.i("TAG",pswd1.getText().toString());
+        Log.i("TAG",pswd2.getText().toString());
+
+        if (!pswd2.getText().toString().trim().equals(pswd1.getText().toString().trim())){
+            return false;
+        }else {
             return true;
         }
-        return false;
+
+//        if (pswd1.getText().toString().equals(pswd2.getText().toString())){
+//            return true;
+//        }else {
+//            return false;
+//        }
     }
     public void doRegister(RegisterBean bean){
         bean.save(new SaveListener<String>() {

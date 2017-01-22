@@ -11,12 +11,6 @@ public class RegisterBean extends BmobObject {
     public String userEmail;
     public String userPswd;
 
-    public RegisterBean(String userName, String userEmail, String userPswd) {
-        this.userName = userName;
-        this.userEmail = userEmail;
-        this.userPswd = userPswd;
-    }
-
     public String getUserName() {
         return userName;
     }

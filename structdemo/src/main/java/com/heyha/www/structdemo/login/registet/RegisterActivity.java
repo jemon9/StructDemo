@@ -1,5 +1,6 @@
 package com.heyha.www.structdemo.login.registet;
 
+import android.util.Log;
 import android.widget.EditText;
 
 import com.heyha.www.library.base.BaseMvpActivity;
@@ -40,7 +41,11 @@ public class RegisterActivity extends BaseMvpActivity<RegisterView, RegisterPres
         if (!presenter.isSame(regPswd, regPswd2)) {
             return;
         }
-        RegisterBean registerBean = new RegisterBean(regName.getText().toString(), regEmail.getText().toString(), regPswd.getText().toString());
+        Log.i("TAG","123");
+        RegisterBean registerBean = new RegisterBean();
+        registerBean.setUserName(regName.getText().toString());
+        registerBean.setUserEmail(regEmail.getText().toString());
+        registerBean.setUserPswd(regPswd.getText().toString());
         presenter.doRegister(registerBean);
     }
 
